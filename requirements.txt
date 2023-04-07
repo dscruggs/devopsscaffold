@@ -1,0 +1,8 @@
+# Style / Linting
+black
+pylint
+flake8
+
+# Test
+pytest
+coverage
