@@ -1,4 +1,4 @@
-name: Test code Python 3.11.2
+name: Test code on Python 3.11.2
 on: [push]
 jobs:
   build:
