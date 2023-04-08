@@ -1,4 +1,4 @@
-name: Test code
+name: Test code Python 3.9.16
 on: [push]
 jobs:
   build:
@@ -9,10 +9,10 @@ jobs:
       - name: list repo
         run: |
           ls
-      - name: Set up Python 3.11.2
+      - name: Set up Python 3.9.16
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11.2
+          python-version: 3.9.16
       - name: setup venv
         run: |
           make setup
