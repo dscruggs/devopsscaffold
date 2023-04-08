@@ -14,6 +14,12 @@ jobs:
         run: ls
       - name: list makefile
         run: cat MakeFile
+      - name: test makefile
+        run: make test_target
+      - name: setup venv
+        run: make setup
+      - name: activate venv
+        run: make source
       - name: Install dependencies
         run: |
           make install

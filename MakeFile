@@ -1,10 +1,13 @@
 setup:
-	python -m venv ~/.venv
+	python -m venv .venv
 
 source:
-	. ~/.venv/bin/activate
+	. .venv/bin/activate
 
-install:
+test_target:
+	ls
+	
+install: requirements.txt
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
@@ -18,3 +21,7 @@ lint-check:
 
 test:
 	coverage run -m pytest -vv ./tests
+
+clean:
+	rm -rf __pycache__
+	rm -rf .venv
