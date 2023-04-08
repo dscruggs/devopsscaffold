@@ -22,9 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           make install
-      - name: Lint
+      - name: Lint Check
         run: |
-          make lint
+          make lint-check
       - name: Test
         run: |
           make test
