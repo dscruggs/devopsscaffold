@@ -19,13 +19,13 @@ jobs:
       - name: activate venv
         run: |
           make source
-      - name: Install dependencies
+      - name: install dependencies
         run: |
           make install
-      - name: Lint Check
+      - name: lint check
         run: |
           make lint-check
-      - name: Test
+      - name: run tests
         run: |
           make test
       - name: clean up dir
