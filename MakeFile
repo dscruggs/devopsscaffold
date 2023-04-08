@@ -4,9 +4,6 @@ setup:
 source:
 	. .venv/bin/activate
 
-test_target:
-	ls
-	
 install: requirements.txt
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
