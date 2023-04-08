@@ -27,6 +27,5 @@ test:
 	python -m coverage run -m pytest -vv ./tests
 
 clean:
-	deactivate
 	rm -rf __pycache__
 	rm -rf $(VENV_NAME)
