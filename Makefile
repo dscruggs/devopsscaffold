@@ -1,34 +1,32 @@
+# variables
+
 VENV_NAME = .venv
 
-# Determine the virtual environment directory based on the operating system
-ifeq ($(OS),Windows_NT)
-    VENV_DIR = $(VENV_NAME)\Scripts
-else
-    VENV_DIR = $(VENV_NAME)/bin
-endif
 
+# targets
 
 setup:
 	python -m venv $(VENV_NAME)
 
 source:
-	. $(VENV_DIR)/activate
+	. $(VENV_NAME)/bin/activate
 
 install: requirements.txt
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	python -m pip install --upgrade pip &&\
+		python -m pip install -r requirements.txt
 
 lint-force:
-	black . --exclude $(VENV_NAME)
+	python -m black . --exclude $(VENV_NAME)
 
 lint-check:
-	black --check . --exclude $(VENV_NAME)
-	flake8 . --exclude $(VENV_NAME)
-	pylint --disable=R,C,pointless-string-statement *.py --ignore=$(VENV_NAME)
+	python -m black --check . --exclude $(VENV_NAME)
+	python -m flake8 . --exclude $(VENV_NAME)
+	python -m pylint --disable=R,C,pointless-string-statement *.py --ignore=$(VENV_NAME)
 
 test:
-	coverage run -m pytest -vv ./tests
+	python -m coverage run -m pytest -vv ./tests
 
 clean:
+	deactivate
 	rm -rf __pycache__
 	rm -rf $(VENV_NAME)
