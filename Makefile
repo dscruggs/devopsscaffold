@@ -1,3 +1,11 @@
+# This Makefile will:
+# - setup a python environment
+# - install requirements
+# - lint and test code
+# - clean up the venv
+# Configured to work for a linux environment
+
+
 # variables
 
 VENV_NAME = .venv
