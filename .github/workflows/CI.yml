@@ -11,15 +11,20 @@ jobs:
         with:
           python-version: 3.11.2
       - name: list repo
-        run: ls
+        run: |
+          ls
       - name: list makefile
-        run: cat MakeFile
+        run: |
+          cat MakeFile
       - name: test makefile
-        run: make test_target
+        run: |
+          make test_target
       - name: setup venv
-        run: make setup
+        run: |
+          make setup
       - name: activate venv
-        run: make source
+        run: |
+          make source
       - name: Install dependencies
         run: |
           make install
@@ -29,3 +34,6 @@ jobs:
       - name: Test
         run: |
           make test
+      - name: clean up dir
+        run: |
+          make clean
