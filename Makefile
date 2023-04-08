@@ -7,9 +7,6 @@ else
     VENV_DIR = $(VENV_NAME)/bin
 endif
 
-PYTHON = $(VENV_DIR)/python
-PIP = $(VENV_DIR)/pip
-
 
 setup:
 	python -m venv $(VENV_NAME)
@@ -18,8 +15,8 @@ source:
 	. $(VENV_DIR)/activate
 
 install: requirements.txt
-	$(PIP) install --upgrade pip &&\
-		$(PIP) install -r requirements.txt
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
 
 lint-force:
 	black . --exclude $(VENV_NAME)
