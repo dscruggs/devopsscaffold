@@ -6,19 +6,13 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
+      - name: list repo
+        run: |
+          ls
       - name: Set up Python 3.11.2
         uses: actions/setup-python@v1
         with:
           python-version: 3.11.2
-      - name: list repo
-        run: |
-          ls
-      - name: list makefile
-        run: |
-          cat MakeFile
-      - name: test makefile
-        run: |
-          make test_target
       - name: setup venv
         run: |
           make setup
